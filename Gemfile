@@ -13,7 +13,7 @@ gem 'wkhtmltopdf-binary'
 
 gem 'local_gov_code'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'sqlite3', group: :development
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -57,7 +57,7 @@ end
 group :production do
   gem "pg"
   gem 'rails_12factor'
-  gem 'wkhtmltopdf-heroku'
+  #gem 'wkhtmltopdf-heroku'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
