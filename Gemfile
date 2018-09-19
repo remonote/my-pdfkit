@@ -8,7 +8,7 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'
-gem 'pdfkit'
+gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 
 gem 'local_gov_code'
@@ -57,7 +57,6 @@ end
 group :production do
   gem "pg"
   gem 'rails_12factor'
-  gem 'wkhtmltopdf-heroku'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -11,22 +11,13 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     respond_to do |format|
-      format.html # show.html.erb
+      format.html
       format.pdf do
-        # 詳細画面のHTMLを取得
-        html = render_to_string template: "users/show"
-
-        # PDFKitを作成
-        pdf = PDFKit.new(html, encoding: "UTF-8")
-
-        # 画面にPDFを表示する
-        # to_pdfメソッドでPDFファイルに変換する
-        # 他には、to_fileメソッドでPDFファイルを作成できる
-        # disposition: "inline" によりPDFはダウンロードではなく画面に表示される
-        send_data pdf.to_pdf,
-          filename:    "#{@user.id}.pdf",
-          type:        "application/pdf",
-          disposition: "inline"
+        render pdf: 'file_name', #pdfファイルの名前。これがないとエラーが出ます
+               template: 'users/show',
+               encording: 'UTF-8',                   # 日本語を使う場合には指定する
+               layout: 'pdf.html',                   # レイアウトファイルの指定
+               show_as_html: params[:debug].present? # debug するか？
       end
     end
   end
