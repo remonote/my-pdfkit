@@ -9,7 +9,9 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'
 gem 'wicked_pdf'
-gem 'wkhtmltopdf-binary'
+#gem 'wkhtmltopdf-binary'
+gem 'wkhtmltopdf-binary',       group: [:development]
+gem 'wkhtmltopdf-binary-edge',  group: [:production, :staging]
 
 gem 'local_gov_code'
 # Use sqlite3 as the database for Active Record
@@ -57,7 +59,7 @@ end
 group :production do
   gem "pg"
   gem 'rails_12factor'
-  gem 'wkhtmltopdf-heroku'
+  #gem 'wkhtmltopdf-heroku'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
