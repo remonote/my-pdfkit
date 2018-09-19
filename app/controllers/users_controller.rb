@@ -17,7 +17,6 @@ class UsersController < ApplicationController
                template: 'users/show',
                encording: 'UTF-8',                   # 日本語を使う場合には指定する
                layout: 'pdf.html', 
-               wkhtmltopdf: '/usr/local/rvm/gems/ruby-2.4.0/bin/wkhtmltopdf',
                show_as_html: params[:debug].present? # debug するか？
       end
     end
